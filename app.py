@@ -10,11 +10,7 @@ app = Flask(__name__)
 model = pickle.load(open("lin_reg.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-@app.route("/predict", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def predict():
     if request.method == "POST":
         Temperature=float(request.form.get("Temperature"))
