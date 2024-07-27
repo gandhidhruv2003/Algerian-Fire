@@ -25,7 +25,7 @@ def predict():
         
         new_data = scaler.transform([[Temperature, RH, Ws, Rain, FFMC, DMC, ISI, Classes, Region]])
         result = model.predict(new_data)
-        return render_template("predict.html",results=result[0])
+        return render_template("predict.html", results=result[0])
         
     else:
         return render_template("predict.html")
